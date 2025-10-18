@@ -1,0 +1,354 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color:blue;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Navigasi */
+nav {
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+nav ul li a.active {
+    background-color:grey;
+}
+
+/* Section (konten utama) */
+section {
+    background-color: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 400px;
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 3px solid blue;
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Content (untuk hide/show) */
+.content {
+    display: none;
+}
+
+.content.show {
+    display: block;
+}
+
+/* Table biodata */
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table td {
+    padding: 8px;
+    vertical-align: top;
+}
+
+table td:first-child {
+    width: 200px;
+}
+
+/* Box untuk pendidikan, pengalaman, dll */
+.box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid blue;
+}
+
+.box h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.box ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.box ul li {
+    margin-bottom: 5px;
+}
+
+/* Skill list */
+.skill-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 3px blue;
+}
+
+/* Aside (sidebar) */
+aside {
+    background-color: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+aside h3, aside h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Foto profil */
+.foto {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.3);
+    object-position: center 90%;
+}
+
+/* Quick info list */
+aside ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+aside ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Social media buttons */
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    display: block;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.social a:hover {
+    background-color: blue;
+}
+
+/* Footer */
+footer {
+    background-color:blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ========================================
+   RESPONSIVE - SMARTPHONE (max 480px)
+   ======================================== */
+@media screen and (max-width: 480px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    header { grid-area: header; }
+    nav { grid-area: nav; }
+    section { grid-area: section; }
+    aside { grid-area: aside; }
+    footer { grid-area: footer; }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 12px;
+        text-align: center;
+    }
+
+    section, aside {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    table td:first-child {
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .foto {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET PORTRAIT (481px - 768px)
+   ======================================== */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "section aside"
+            "footer footer";
+        grid-template-columns: 2fr 1fr;
+        gap: 0;
+    }
+
+    header { grid-area: header; }
+    nav { grid-area: nav; }
+    section { grid-area: section; }
+    aside { grid-area: aside; }
+    footer { grid-area: footer; }
+
+    nav ul li a {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    section {
+        margin-right: 10px;
+    }
+
+    aside {
+        margin-left: 10px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET LANDSCAPE (769px - 1024px)
+   ======================================== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "section section aside"
+            "footer footer footer";
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 0;
+    }
+
+    header { grid-area: header; }
+    nav { grid-area: nav; }
+    section { grid-area: section; }
+    aside { grid-area: aside; }
+    footer { grid-area: footer; }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (min 1025px)
+   ======================================== */
+@media screen and (min-width: 1025px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "section section section aside"
+            "footer footer footer footer";
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    header { grid-area: header; }
+    nav { grid-area: nav; }
+    section { grid-area: section; }
+    aside { grid-area: aside; }
+    footer { grid-area: footer; }
+}
